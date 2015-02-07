@@ -9,6 +9,8 @@
 #endif
 
 #include <sailfishapp.h>
+#include <QGuiApplication>
+#include <QQuickView>
 #include <QScopedPointer>
 
 int main(int argc, char *argv[])
