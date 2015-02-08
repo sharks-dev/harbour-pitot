@@ -8,5 +8,9 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Sun Feb 08 2015 Mikko Ahlroth <mikko.ahlroth@gmail.com> 1.0.1-1
+- Added an about page
+- Fixed bug where the speed was always shown in meters/second
+
 * Sat Feb 07 2015 Mikko Ahlroth <mikko.ahlroth@gmail.com> 1.0.0-1
 - Initial release

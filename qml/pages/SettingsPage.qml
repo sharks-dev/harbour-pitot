@@ -11,7 +11,7 @@ import "../logic.js" as L
 import "../storage.js" as S
 
 Page {
-    id: mainPage
+    id: settingsPage
 
     allowedOrientations: Orientation.All
 

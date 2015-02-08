@@ -2,6 +2,21 @@
 <!DOCTYPE TS>
 <TS version="2.1">
 <context>
+    <name>AboutPage</name>
+    <message>
+        <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pitot is open source software. You can find the licence details and source code on BitBucket.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open project website in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>CoverPage</name>
     <message>
         <source>Getting location…</source>
@@ -16,6 +31,10 @@
     </message>
     <message>
         <source>Getting location…</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>About</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

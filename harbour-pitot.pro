@@ -26,7 +26,8 @@ OTHER_FILES += qml/harbour-pitot.qml \
     qml/pages/MainPage.qml \
     qml/logic.js \
     qml/storage.js \
-    qml/pages/SettingsPage.qml
+    qml/pages/SettingsPage.qml \
+    qml/pages/AboutPage.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

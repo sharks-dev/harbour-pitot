@@ -18,7 +18,7 @@ CoverBackground {
             speedUnit.text = qsTr('Getting location…');
         }
         else {
-            speedText.text = speed.toFixed(1);
+            speedText.text = realSpeed.toFixed(1);
             speedUnit.text = unit.name;
         }
     }
@@ -39,6 +39,9 @@ CoverBackground {
         color: Theme.primaryColor
         font.pixelSize: height * 0.6
         scale: paintedWidth > width? (width / paintedWidth) : 1
+
+        // Avoid jagged edges in font
+        renderType: Text.NativeRendering
     }
 
     Label {

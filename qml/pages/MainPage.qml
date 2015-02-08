@@ -23,7 +23,7 @@ Page {
             waitIndicator.running = true;
         }
         else {
-            speedText.text = speed.toFixed(1);
+            speedText.text = realSpeed.toFixed(1);
             speedUnit.text = unit.name;
             waitIndicator.running = false;
         }
@@ -37,6 +37,11 @@ Page {
         anchors.fill: parent
 
         PullDownMenu {
+            MenuItem {
+                text: qsTr('About')
+                onClicked: pageStack.push(Qt.resolvedUrl('AboutPage.qml'))
+            }
+
             MenuItem {
                 text: qsTr('Settings')
                 onClicked: pageStack.push(Qt.resolvedUrl('SettingsPage.qml'))
@@ -62,6 +67,9 @@ Page {
             color: Theme.primaryColor
             font.pixelSize: height * 0.6
             scale: paintedWidth > width? (width / paintedWidth) : 1
+
+            // Avoid jagged edges in font
+            renderType: Text.NativeRendering
         }
 
         Label {
