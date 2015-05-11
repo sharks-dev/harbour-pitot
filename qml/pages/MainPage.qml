@@ -14,6 +14,19 @@ Page {
 
     allowedOrientations: Orientation.All
 
+    function disable(disabled) {
+        if (disabled) {
+            speedText.text = qsTr('Location disabled');
+            speedUnit.text = qsTr('Please enable location services in settings.');
+            waitIndicator.running = false;
+        }
+        else {
+            speedText.text = '';
+            speedUnit.text = qsTr('Getting location…');
+            waitIndicator.running = true;
+        }
+    }
+
     function updateSpeed(speed, unit) {
         var realSpeed = L.convertSpeed(speed);
 
@@ -31,6 +44,7 @@ Page {
 
     Component.onCompleted: {
         L.addUpdateListener(updateSpeed);
+        L.addDisabledListener(disable);
     }
 
     SilicaFlickable {
@@ -82,6 +96,7 @@ Page {
             color: Theme.secondaryColor
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignBottom
+            wrapMode: Text.WordWrap
         }
     }
 }

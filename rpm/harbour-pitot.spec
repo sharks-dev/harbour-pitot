@@ -13,11 +13,11 @@ Name:       harbour-pitot
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Pitot
-Version:    1.0
+Version:    1.0.2
 Release:    1
 Group:      Qt/Qt Mobility
 License:    LICENSE
-URL:        http://example.org/
+URL:        https://bitbucket.org/vincit/harbour-pitot/overview
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-pitot.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9

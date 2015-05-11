@@ -16,7 +16,13 @@ ApplicationWindow
     initialPage: Component { MainPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
-    Component.onCompleted: positionSource.start()
+    Component.onCompleted: {
+        if (positionSource.supportedPositioningMethods === PositionSource.NoPositioningMethods) {
+            L.disable(true);
+        }
+
+        positionSource.start();
+    }
 
     PositionSource {
         id: positionSource
@@ -25,8 +31,13 @@ ApplicationWindow
 
         onPositionChanged: {
             L.update(position);
+
+            if (positionSource.sourceError === PositionSource.ClosedError) {
+                L.disable(true);
+            }
+            else if (positionSource.sourceError === PositionSource.NoError) {
+                L.disable(false);
+            }
         }
     }
 }
-
-

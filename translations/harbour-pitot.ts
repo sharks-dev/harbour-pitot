@@ -15,6 +15,14 @@
         <source>Open project website in browser</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>The development of this app has been graciously sponsored by Vincit Oy, the passionate software company.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Vincit website in browser</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>CoverPage</name>
@@ -35,6 +43,14 @@
     </message>
     <message>
         <source>About</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Location disabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please enable location services in settings.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

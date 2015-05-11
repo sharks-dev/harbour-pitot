@@ -34,17 +34,32 @@ var UNITS = {
 // 2. The active unit
 var updateListeners = [];
 
+// List of functions that will be called when positioning has been
+// disabled or enabled.
+// Each function will receive one argument, a boolean false if
+// positioning is enabled and true if it is disabled.
+var disabledListeners = [];
+
 // The current speed in meters per second
 var currentSpeed = 0;
 
 // The current unit displayed
 var currentUnit = UNITS[S.readSetting(db, 'speed_unit', 'mps')];
 
+// Is positioning disabled because of no available sources?
+var disabled = false;
+
 
 
 // Add an update listener which will be called on each location update
 function addUpdateListener(listener) {
     updateListeners.push(listener);
+}
+
+// Add a disable listener which will be called when positioning is
+// disabled or enabled
+function addDisabledListener(listener) {
+    disabledListeners.push(listener);
 }
 
 // Update all listeners with new position data
@@ -64,9 +79,27 @@ function convertSpeed(speed) {
     return speed * currentUnit.factor;
 }
 
+// Disable or enable positioning
+function disable(newStatus) {
+    // Don't change to new status needlessly if that status is already on
+    if (newStatus === disabled) {
+        return;
+    }
+
+    disabled = newStatus;
+    _callDisabledListeners();
+}
+
 // Call all update listeners
 function _callUpdateListeners() {
     for (var i = 0; i < updateListeners.length; ++i) {
         updateListeners[i](currentSpeed, currentUnit);
+    }
+}
+
+// Call all disable listeners
+function _callDisabledListeners() {
+    for (var i = 0; i < disabledListeners.length; ++i) {
+        disabledListeners[i](disabled);
     }
 }
