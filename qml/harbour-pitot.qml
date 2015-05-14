@@ -29,6 +29,9 @@ ApplicationWindow
 
         updateInterval: 1000
 
+        // Make sure we are using all available positioning methods
+        preferredPositioningMethods: PositionSource.AllPositioningMethods
+
         onPositionChanged: {
             L.update(position);
 

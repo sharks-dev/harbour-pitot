@@ -13,7 +13,7 @@ function connect() {
         return db;
     }
 
-    db = LS.LocalStorage.openDatabaseSync("SailTime", "1.0", "StorageDatabase", 10240);
+    db = LS.LocalStorage.openDatabaseSync("Pitot", "1.0", "StorageDatabase", 10240);
 
     db.transaction(function(tx) {
         tx.executeSql("CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY, value TEXT);");
