@@ -6,47 +6,58 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-
-import "../logic.js" as L
+import QtPositioning 5.2
+// import Nemo.KeepAlive 1.2
 
 Page {
     id: mainPage
 
     allowedOrientations: Orientation.All
-
-    function disable(disabled) {
-        if (disabled) {
-            speedText.text = qsTr('Location disabled');
-            speedUnit.text = qsTr('Please enable location services in settings.');
-            waitIndicator.running = false;
-        }
-        else {
-            speedText.text = '';
-            speedUnit.text = qsTr('Getting location…');
-            waitIndicator.running = true;
-        }
+/*
+    KeepAlive {
+        id: keepAlive
+        enabled: keep_alive.value;
     }
+*/
+    function updateSpeed() {
+        realSpeed = currentSpeed * units[speed_unit.value].factor;
 
-    function updateSpeed(speed, unit) {
-        var realSpeed = L.convertSpeed(speed);
-
-        if (realSpeed < 0) {
+        if (isNaN(realSpeed)) {
             speedText.text = '';
-            speedUnit.text = qsTr('Getting location…');
+            speedUnit.text = qsTr('Getting location. Please ensure location services are enabled…');
             waitIndicator.running = true;
         }
         else {
             speedText.text = realSpeed.toFixed(1);
-            speedUnit.text = unit.name;
+            speedUnit.text = units[speed_unit.value].name;
             waitIndicator.running = false;
         }
     }
 
     Component.onCompleted: {
-        L.addUpdateListener(updateSpeed);
-        L.addDisabledListener(disable);
+        positionSource.start();
+        //updateKeepAlive();
     }
 
+    PositionSource {
+        id: positionSource
+
+        active: true
+
+        // Make sure we are using all available positioning methods
+        preferredPositioningMethods: PositionSource.AllPositioningMethods
+
+        onPositionChanged: {
+            currentSpeed = position.speed;
+            updateSpeed();
+        }
+    }
+/*
+    function updateKeepAlive() {
+        keepAlive.enabled = keep_alive.value;
+        DisplayBlanking.preventBlanking = keep_alive.value;
+    }
+*/
     SilicaFlickable {
         anchors.fill: parent
 
@@ -58,7 +69,7 @@ Page {
 
             MenuItem {
                 text: qsTr('Settings')
-                onClicked: pageStack.push(Qt.resolvedUrl('SettingsPage.qml'))
+                onClicked: pageStack.push(Qt.resolvedUrl('SettingsPage.qml'), { mainPageRef: mainPage })
             }
         }
 

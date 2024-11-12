@@ -9,21 +9,18 @@
 #endif
 
 #include <sailfishapp.h>
-#include <QGuiApplication>
-#include <QQuickView>
-#include <QScopedPointer>
 
 int main(int argc, char *argv[])
 {
-    QScopedPointer<QGuiApplication> app(SailfishApp::application(argc, argv));
+    // SailfishApp::main() will display "qml/harbour-pitot.qml", if you need more
+    // control over initialization, you can use:
+    //
+    //   - SailfishApp::application(int, char *[]) to get the QGuiApplication *
+    //   - SailfishApp::createView() to get a new QQuickView * instance
+    //   - SailfishApp::pathTo(QString) to get a QUrl to a resource file
+    //   - SailfishApp::pathToMainQml() to get a QUrl to the main QML file
+    //
+    // To display the view, call "show()" (will show fullscreen on device).
 
-    app->setApplicationName("harbour-pitot");
-
-    QScopedPointer<QQuickView> view(SailfishApp::createView());
-
-    view->setSource(SailfishApp::pathTo("qml/harbour-pitot.qml"));
-    view->show();
-
-    return app->exec();
+    return SailfishApp::main(argc, argv);
 }
-

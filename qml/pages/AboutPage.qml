@@ -24,9 +24,14 @@ Page {
                 title: qsTr("About")
             }
 
+            Image {
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../../../icons/hicolor/172x172/apps/harbour-pitot.png"
+            }
+
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Pitot 1.0.1"
+                text: "Pitot 1.0.4"
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeLarge
             }
@@ -38,6 +43,13 @@ Page {
                 font.pixelSize: Theme.fontSizeMedium
             }
 
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "© Sharks 2024"
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeMedium
+            }
+
             Separator {
                 x: Theme.paddingLarge
                 width: parent.width - Theme.paddingLarge * 2
@@ -47,7 +59,7 @@ Page {
 
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("Pitot is open source software. You can find the licence details and source code on BitBucket.")
+                text: qsTr("Pitot is open source software. You can find the licence details and source code on GitHub.")
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeMedium
                 wrapMode: Text.WordWrap
@@ -57,7 +69,7 @@ Page {
             Button {
                 text: qsTr("Open project website in browser")
                 anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: Qt.openUrlExternally("https://bitbucket.org/vincit/harbour-pitot");
+                onClicked: Qt.openUrlExternally("https://github.com/sharks-dev/harbour-pitot/");
             }
 
             Separator {
@@ -65,21 +77,6 @@ Page {
                 width: parent.width - Theme.paddingLarge * 2
                 horizontalAlignment: Qt.AlignCenter
                 color: Theme.highlightColor
-            }
-
-            Label {
-                anchors.horizontalCenter: parent.horizontalCenter
-                text: qsTr("The development of this app has been graciously sponsored by Vincit Oy, the passionate software company.")
-                color: Theme.highlightColor
-                font.pixelSize: Theme.fontSizeMedium
-                wrapMode: Text.WordWrap
-                width: parent.width - Theme.paddingLarge * 2
-            }
-
-            Button {
-                text: qsTr("Open Vincit website in browser")
-                anchors.horizontalCenter: parent.horizontalCenter
-                onClicked: Qt.openUrlExternally("http://www.vincit.com/");
             }
         }
     }

@@ -8,26 +8,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Pitot is open source software. You can find the licence details and source code on BitBucket.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Open project website in browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>The development of this app has been graciously sponsored by Vincit Oy, the passionate software company.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Open Vincit website in browser</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>CoverPage</name>
-    <message>
-        <source>Getting location…</source>
+        <source>Pitot is open source software. You can find the licence details and source code on GitHub.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -38,19 +23,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Getting location…</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Location disabled</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please enable location services in settings.</source>
+        <source>Getting location. Please ensure location services are enabled…</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -66,11 +43,7 @@
     </message>
 </context>
 <context>
-    <name>logic</name>
-    <message>
-        <source>meters per second</source>
-        <translation type="unfinished"></translation>
-    </message>
+    <name>harbour-pitot</name>
     <message>
         <source>meters per minute</source>
         <translation type="unfinished"></translation>

@@ -6,41 +6,44 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-import QtPositioning 5.2
+import Nemo.Configuration 1.0
 import "pages"
 
-import "logic.js" as L
 
-ApplicationWindow
-{
+
+ApplicationWindow {
+    Item {
+        ConfigurationValue {
+            id: speed_unit
+            key: "/apps/harbour-pitot/settings/speed_unit"
+            defaultValue: 'mps'
+        }
+        ConfigurationValue {
+            id: keep_alive
+            key: "/apps/harbour-pitot/settings/keep_alive"
+            defaultValue: false
+        }
+    }
+    property real currentSpeed: 0
+    property var units: {
+        // Meters per second
+        "mps": { "factor": 1, "name": "meters per second" },
+        // Meters per minute
+        "mpm": { "factor": 60, "name": qsTr("meters per minute") },
+        // Kilometers per hour
+        "kph": { "factor": 3.6, "name": qsTr("kilometers per hour") },
+        // Miles per hour
+        "mph": { "factor": 2.23693629, "name": qsTr("miles per hour") },
+        // Feet per second
+        "fps": { "factor": 3.2808399, "name": qsTr("feet per second") },
+        // Knots
+        "knt": { "factor": 1.943844, "name": qsTr("knots") }
+    }
+    property real realSpeed: 0
+
+
     initialPage: Component { MainPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
-    Component.onCompleted: {
-        if (positionSource.supportedPositioningMethods === PositionSource.NoPositioningMethods) {
-            L.disable(true);
-        }
 
-        positionSource.start();
-    }
-
-    PositionSource {
-        id: positionSource
-
-        updateInterval: 1000
-
-        // Make sure we are using all available positioning methods
-        preferredPositioningMethods: PositionSource.AllPositioningMethods
-
-        onPositionChanged: {
-            L.update(position);
-
-            if (positionSource.sourceError === PositionSource.ClosedError) {
-                L.disable(true);
-            }
-            else if (positionSource.sourceError === PositionSource.NoError) {
-                L.disable(false);
-            }
-        }
-    }
 }

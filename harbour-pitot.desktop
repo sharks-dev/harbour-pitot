@@ -4,3 +4,8 @@ X-Nemo-Application-Type=silica-qt5
 Icon=harbour-pitot
 Exec=harbour-pitot
 Name=Pitot
+
+[X-Sailjail]
+OrganizationName=io.github.sharks-dev
+ApplicationName=Pitot
+Permissions=Location

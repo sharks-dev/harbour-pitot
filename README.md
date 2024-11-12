@@ -14,8 +14,6 @@ friendly letters and can convert to multiple different speed units.
 
 Pitot is open source. Check the LICENCE file for details.
 
-The roadmap for future releases will involve updating the methods by which user preferences are stored to use Nemo.Configuration, fixing bugs that have come about as a result of modern SFOS releases, and updating the location and resolution of icon files etc. to match what modern versions of SFOS expect.
-
 
 This application was originally developed by Mikko Ahlroth (Nicd). [OpenRepos](https://openrepos.net/content/nicd/pitot), [Gitlab](https://gitlab.com/mikko.ahlroth.vincit/harbour-pitot).
 

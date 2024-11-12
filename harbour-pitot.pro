@@ -16,18 +16,18 @@ CONFIG += sailfishapp
 
 SOURCES += src/harbour-pitot.cpp
 
-OTHER_FILES += qml/harbour-pitot.qml \
+DISTFILES += qml/harbour-pitot.qml \
     qml/cover/CoverPage.qml \
-    rpm/harbour-pitot.spec \
-    rpm/harbour-pitot.yaml \
-    translations/*.ts \
-    harbour-pitot.desktop \
-    rpm/harbour-pitot.changes \
     qml/pages/MainPage.qml \
-    qml/logic.js \
-    qml/storage.js \
     qml/pages/SettingsPage.qml \
-    qml/pages/AboutPage.qml
+    qml/pages/AboutPage.qml \
+    rpm/harbour-pitot.changes \
+    rpm/harbour-pitot.spec \
+    translations/*.ts \
+    icons/172x172/harbour-pitot.png \
+    harbour-pitot.desktop
+
+SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172
 
 # to disable building translations every time, comment out the
 # following CONFIG line

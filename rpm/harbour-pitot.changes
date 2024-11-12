@@ -8,6 +8,13 @@
 # * date Author's Name <author's email> version-release
 # - Summary of changes
 
+* Tue Nov 12 2024 Ash Sharkey <asharkey268@outlook.com> 1.0.3-1
+- Removed storage.js, local.js.
+- Implemented Nemo.Configuration for saving unit preferences
+- Updated icon files
+- Fixed bug resulting in the app displaying 'NaN' when no GPS signal is available
+- Added SailJail
+
 * Sun Feb 08 2015 Mikko Ahlroth <mikko.ahlroth@gmail.com> 1.0.1-1
 - Added an about page
 - Fixed bug where the speed was always shown in meters/second

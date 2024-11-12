@@ -7,24 +7,28 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 
-import "../logic.js" as L
-
 CoverBackground {
-    function updateSpeed(speed, unit) {
-        var realSpeed = L.convertSpeed(speed);
+    Timer {
+        // kinda bodge-y to run a timer like this, but it works.
+        id: timer
+        repeat: true
+        interval: 500
 
-        if (realSpeed < 0) {
-            speedText.text = 'Pitot';
-            speedUnit.text = qsTr('Getting location…');
-        }
-        else {
-            speedText.text = realSpeed.toFixed(1);
-            speedUnit.text = unit.name;
+        onTriggered: {
+            if (isNaN(realSpeed)) {
+                waitIndicator.running = true;
+                speedText.text = '';
+                speedUnit.text = '';
+            } else {
+                waitIndicator.running = false;
+                speedText.text = realSpeed.toFixed(1);
+                speedUnit.text = units[speed_unit.value].name;
+            }
         }
     }
 
     Component.onCompleted: {
-        L.addUpdateListener(updateSpeed);
+        timer.start();
     }
 
     Label {
@@ -42,6 +46,13 @@ CoverBackground {
 
         // Avoid jagged edges in font
         renderType: Text.NativeRendering
+    }
+
+    BusyIndicator {
+        id: waitIndicator
+
+        anchors.centerIn: parent
+        size: BusyIndicatorSize.Large
     }
 
     Label {
