@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/sharks-dev/harbour-pitot/refs/heads/master/harbour-pitot.png" height="100" />
+<img src="https://raw.githubusercontent.com/sharks-dev/harbour-pitot/refs/heads/master/icons/172x172/harbour-pitot.png" height="100" />
 
 # Pitot
 ### A GPS/GLONASS speedometer for Sailfish OS
@@ -7,9 +7,9 @@ Pitot is a simple GPS/GLONASS speedometer for your SailfishOS device. It shows y
 friendly letters and can convert to multiple different speed units.
 
 <table>
-  <td><img src="https://openrepos.net/sites/default/files/packages/18851/screenshot-screenshot20241111101627001.png" alt="MainPage" width="200"/></td>
-  <td><img src="https://openrepos.net/sites/default/files/packages/18851/screenshot-screenshot20241111101636001.png" alt="About" width="200"/></td>
-  <td><img src="https://openrepos.net/sites/default/files/packages/18851/screenshot-screenshot20241111101644001.png" alt="Options" width="200"/></td>
+  <td><img src="https://raw.githubusercontent.com/sharks-dev/harbour-pitot/refs/heads/master/screenshots/portrait.png" alt="MainPage" width="200"/></td>
+  <td><img src="https://raw.githubusercontent.com/sharks-dev/harbour-pitot/refs/heads/master/screenshots/about.png" alt="About" width="200"/></td>
+  <td><img src="https://raw.githubusercontent.com/sharks-dev/harbour-pitot/refs/heads/master/screenshots/units.png" alt="Options" width="200"/></td>
 </table>
 
 Pitot is open source. Check the LICENCE file for details.
