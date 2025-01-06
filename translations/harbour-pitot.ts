@@ -45,6 +45,10 @@
 <context>
     <name>harbour-pitot</name>
     <message>
+        <source>meters per second</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>meters per minute</source>
         <translation type="unfinished"></translation>
     </message>
