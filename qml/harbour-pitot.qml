@@ -27,7 +27,7 @@ ApplicationWindow {
     property real currentSpeed: 0
     property var units: {
         // Meters per second
-        "mps": { "factor": 1, "name": "meters per second" },
+        "mps": { "factor": 1, "name": qsTr("meters per second") },
         // Meters per minute
         "mpm": { "factor": 60, "name": qsTr("meters per minute") },
         // Kilometers per hour
