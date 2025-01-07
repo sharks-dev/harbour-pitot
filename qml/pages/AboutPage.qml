@@ -31,7 +31,7 @@ Page {
 
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "Pitot 1.0.4"
+                text: "Pitot 1.0.5"
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeLarge
             }
@@ -45,7 +45,7 @@ Page {
 
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "© Sharks 2024"
+                text: "© Ash Sharkey 2024"
                 color: Theme.highlightColor
                 font.pixelSize: Theme.fontSizeMedium
             }
@@ -77,6 +77,15 @@ Page {
                 width: parent.width - Theme.paddingLarge * 2
                 horizontalAlignment: Qt.AlignCenter
                 color: Theme.highlightColor
+            }
+
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("Sweedish translation by Åke Engelbrektson")
+                color: Theme.highlightColor
+                font.pixelSize: Theme.fontSizeMedium
+                wrapMode: Text.WordWrap
+                width: parent.width - Theme.paddingLarge * 2
             }
         }
     }

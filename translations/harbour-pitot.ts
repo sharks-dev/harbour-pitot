@@ -15,6 +15,10 @@
         <source>Pitot is open source software. You can find the licence details and source code on GitHub.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Sweedish translation by Åke Engelbrektson</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainPage</name>

@@ -1,7 +1,7 @@
 Name:       harbour-pitot
 
 Summary:    Pitot
-Version:    1.0.4
+Version:    1.0.5
 Release:    1
 Group:      Qt/Qt Mobility
 License:    LICENSE
@@ -13,6 +13,7 @@ BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
 BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
+BuildRequires:  qt5-qttools-linguist
 
 %description
 Displays the GPS/GLONASS speed of the device.

@@ -15,6 +15,10 @@
         <source>Pitot is open source software. You can find the licence details and source code on GitHub.</source>
         <translation>Pitot är programvara med öppen källkod. Du hittar licensinformation och källkod på GitHub.</translation>
     </message>
+    <message>
+        <source>Sweedish translation by Åke Engelbrektson</source>
+        <translation>Svensk översättning av Åke Engelbrektson</translation>
+    </message>
 </context>
 <context>
     <name>MainPage</name>
