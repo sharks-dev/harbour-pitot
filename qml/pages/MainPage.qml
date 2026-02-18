@@ -7,18 +7,18 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
 import QtPositioning 5.2
-// import Nemo.KeepAlive 1.2
+import Nemo.KeepAlive 1.2
 
 Page {
     id: mainPage
 
     allowedOrientations: Orientation.All
-/*
+
     KeepAlive {
         id: keepAlive
         enabled: keep_alive.value;
     }
-*/
+
     function updateSpeed() {
         realSpeed = currentSpeed * units[speed_unit.value].factor;
 
