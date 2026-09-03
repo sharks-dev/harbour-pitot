@@ -4,7 +4,7 @@ Summary:    Pitot
 Version:    1.0.5
 Release:    1
 Group:      Qt/Qt Mobility
-License:    LICENSE
+License:    MIT
 URL:        https://github.com/sharks-dev/harbour-pitot
 Source0:    %{name}-%{version}.tar.bz2
 Requires:   sailfishsilica-qt5 >= 0.10.9
@@ -16,8 +16,31 @@ BuildRequires:  desktop-file-utils
 BuildRequires:  qt5-qttools-linguist
 
 %description
-Displays the GPS/GLONASS speed of the device.
+Pitot is a simple GPS/GLONASS speedometer for your SailfishOS device. It shows your current speed in big, friendly letters and can convert to multiple different speed units. This application was originally developed by Mikko Ahlroth (Nicd).
 
+# This description section includes metadata for SailfishOS:Chum, see
+# https://github.com/sailfishos-chum/main/blob/main/Metadata.md
+%if 0%{?_chum}
+Title: Pitot
+Type: desktop-application
+DeveloperName: Sharks
+PackagedBy: Sharks
+Categories:
+ - Utility
+Custom:
+  Repo: https://github.com/sharks-dev/harbour-pitot
+PackageIcon: https://github.com/sharks-dev/harbour-pitot/raw/master/icons/172x172/harbour-pitot.png
+Screenshots:
+ - https://github.com/sharks-dev/harbour-pitot/raw/master/screenshots/portrait.png
+ - https://github.com/sharks-dev/harbour-pitot/raw/master/screenshots/units.png
+ - https://github.com/sharks-dev/harbour-pitot/raw/master/screenshots/about.png
+ - https://github.com/sharks-dev/harbour-pitot/raw/master/screenshots/cover.png
+ - https://github.com/sharks-dev/harbour-pitot/raw/master/screenshots/getting_location.png
+ - https://github.com/sharks-dev/harbour-pitot/raw/mmaster/screenshots/landscape.png
+Links:
+  Homepage: https://github.com/sharks-dev/harbour-pitot
+  Bugtracker: https://github.com/sharks-dev/harbour-pitot/issues
+%endif
 
 %prep
 %setup -q -n %{name}-%{version}
